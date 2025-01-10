@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +14,33 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const catalogTxt = "CATALOG";
+
   return (
     <nav className="bg-gray-900 text-white fixed min-w-full w-full z-50 py-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold">
-              CATALOG
+              <motion.div
+                style={{ display: "inline-block" }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+              >
+                {catalogTxt.split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      delay: index * 0.1,
+                      duration: 0.1,
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.div>
             </Link>
           </div>
           <div className="hidden md:block">
