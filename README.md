@@ -94,7 +94,13 @@ npm run build
 3. Navigate through different tabs for insights.
 4. Click **Fullscreen** for a better chart view.
 
+## Future Improvements
 
+1. Fetch real-time comparison data for more accurate price trends.
+
+2. Personalise AI Chat Recommendation for Data insights.
+
+3. Additional chart customization options.
 
 ---
 
